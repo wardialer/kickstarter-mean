@@ -1,0 +1,26 @@
+<div role="dialog" aria-label="Add user" layout="raw" layout-align="center center">
+    <form>
+        <div class="signup-container">
+            <div class="text-title">{{adminCtrl.title}}</div>
+            <md-input-container class="md-block">
+                <md-icon ng_bind="'face'"></md-icon>
+                <label for="name">Name</label>
+                <input type="text" id="name" ng-model="adminCtrl.formData.name"/>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <md-icon ng_bind="'perm_identity'"></md-icon>
+                <label for="username">Username</label>
+                <input type="text" id="username" ng-model="adminCtrl.formData.username" ng-disabled="adminCtrl.disabled"/>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <md-icon ng_bind="'lock_outline'"></md-icon>
+                <label for="password">Password</label>
+                <input type="password" id="password" ng-model="adminCtrl.formData.password" ng-disabled="adminCtrl.disabled"/>
+            </md-input-container>
+            <div layout="row">
+                <md-button flex class="md-primary" layout-align="start center" ng-click="adminCtrl.cancel()">Cancel</md-button>
+                <md-button flex type="submit" class="md-raised md-accent" layout-align="end center" ng-click="adminCtrl.saveUser(adminCtrl.formData)">Save</md-button>
+            </div>
+        </div>
+    </form>
+</div>

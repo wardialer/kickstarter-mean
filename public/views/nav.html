@@ -1,0 +1,15 @@
+<div class="container">
+    <md-nav-bar md-selected-nav-item="navCtrl.currentState" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-sref=".home" name="logged.home">
+            <md-icon md-colors="{color:'light-blue'}" ng_bind="'home'"></md-icon> Home
+        </md-nav-item>
+        <md-nav-item required-role="admin" md-nav-sref=".admin" name="logged.admin">
+            <md-icon md-colors="{color:'light-blue'}" ng_bind="'person_add'"></md-icon> Admin
+        </md-nav-item>
+        <span flex></span>
+        <md-button md-colors="{color:'grey-600'}" ng-click="navCtrl.logout()">
+            <md-icon class="logout-icon" ng_bind="'exit_to_app'"></md-icon>Logout
+        </md-button>
+    </md-nav-bar>
+    <div ui-view></div>
+</div>

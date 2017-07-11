@@ -1,0 +1,27 @@
+<div id="admin-users-container" class="screen-bg">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex md-truncate>Users</h2>
+            <md-button class="md-icon-button" ng-click="adminCtrl.showListUsers()" aria-label="show user list">
+                <md-icon ng-bind="adminCtrl.listUsers ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"></md-icon>
+                <md-tooltip>{{adminCtrl.listUsers ? 'Hide User List' : 'Show User List'}}</md-tooltip>
+            </md-button>
+            <md-button class="md-fab md-mini md-accent" ng-click="adminCtrl.showAddDialog($event)">
+                <md-icon ng-bind="'add'"></md-icon>
+                <md-tooltip>New User</md-tooltip>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content class="list-content show" ng-class="{hide: !adminCtrl.listUsers}" >
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="user in adminCtrl.users">
+                <div class="md-list-item-text">
+                  <h3>{{user.username}}</h3>
+                  <md-icon class="md-secondary" ng-bind="'mode_edit'" ng-click="adminCtrl.showEditDialog($event,user)" aria-label="edit user"></md-icon>
+                </div>
+                <md-divider inset></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>
+<div ui-view="chips"></div>

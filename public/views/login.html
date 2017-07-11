@@ -1,0 +1,27 @@
+<div id="login-container">
+    <md-card class="login-card">
+        <img ng-src="{{loginCtrl.imagePath}}" class="md-padding">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-subhead text-title">Kickstarter project</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content class="card-content">
+            <form>
+                <md-input-container class="md-block">
+                    <md-icon ng_bind="'perm_identity'"></md-icon>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" ng-model="loginCtrl.formData.username" required />
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <md-icon ng_bind="'lock_outline'"></md-icon>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" ng-model="loginCtrl.formData.password" required />
+                </md-input-container>
+                <div>
+                    <md-button type="submit" class="md-raised md-accent" ng-click="loginCtrl.login()">Login</md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</div>
