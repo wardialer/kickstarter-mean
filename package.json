@@ -32,14 +32,13 @@
     "grunt-contrib-uglify": "^2.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
-    "grunt-git-hooks": "^1.0.1",
-    "grunt-githooks": "^0.6.0",
     "grunt-jsdoc": "^2.1.0",
     "grunt-nodemon": "^0.4.2",
     "grunt-sass": "^2.0.0",
     "grunt-targethtml": "^0.2.6",
     "ink-docstrap": "^1.3.0",
     "load-grunt-tasks": "^3.5.2",
+    "pre-commit": "^1.2.2",
     "sinon": "^2.3.7"
   },
   "scripts": {
