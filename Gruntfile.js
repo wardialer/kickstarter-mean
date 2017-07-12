@@ -12,8 +12,8 @@ module.exports = ((grunt) => {
             scripts: ['**/*.js', '!public/libs/**', '!node_modules/**', '!docs/**'],
         },
         // pre-commit hook
-        gitooks: {
-            all: {
+        'git-hooks': {
+            hooks: {
                 'pre-commit': 'eslint ava',
             },
         },
@@ -159,8 +159,6 @@ module.exports = ((grunt) => {
             },
         },
     });
-
-    grunt.loadNpmTasks('grunt-githooks');
 
     grunt.registerTask('default', ['eslint', 'sass', 'targethtml:dev', 'concurrent']);
     grunt.registerTask('build', ['eslint', 'ava', 'uglify', 'sass', 'cssmin', 'targethtml:dist', 'compress']);
