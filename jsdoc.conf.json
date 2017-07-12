@@ -1,0 +1,25 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["app/","README.md"],
+    "exclude": ["node_modules/"],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins"   : ["plugins/markdown"],
+  "markdown": {
+    "parser": "gfm"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "copyright": "2016",
+    "navType": "vertical",
+    "theme": "superhero",
+    "linenums": true,
+    "collapseSymbols": false,
+    "inverseNav": false
+  }
+}

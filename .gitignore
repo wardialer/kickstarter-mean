@@ -6,7 +6,7 @@ public/views/index.html
 **/*.css
 **/*.css.map
 **/dist/
-
+docs/
 config/config.js
 
 # Editors settings

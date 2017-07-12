@@ -9,7 +9,13 @@ module.exports = ((grunt) => {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
-            scripts: ['**/*.js', '!public/libs/**', '!node_modules/**', '!doc/**'],
+            scripts: ['**/*.js', '!public/libs/**', '!node_modules/**', '!docs/**'],
+        },
+        // pre-commit hook
+        gitooks: {
+            all: {
+                'pre-commit': 'eslint ava',
+            },
         },
         // validate js files
         eslint: {
@@ -17,7 +23,19 @@ module.exports = ((grunt) => {
                 quiet: false,
                 fix: false,
             },
+            src: ['*.js', '**/*.js', '!docs/**', '!node_modules/**', '!public/libs/**'],
             build: '<%= meta.scripts %>',
+        },
+        // building documentation
+        jsdoc: {
+            dist: {
+                src: ['app/**/*.js'],
+                options: {
+                    destination: 'docs',
+                    template: 'node_modules/ink-docstrap/template',
+                    configure: 'jsdoc.conf.json',
+                },
+            },
         },
         // minify js files
         uglify: {
@@ -129,7 +147,7 @@ module.exports = ((grunt) => {
         },
         // testing with ava
         ava: {
-            test: ['test/*.js'],
+            test: ['test/**/*.js'],
             nycTest: {
                 options: {
                     verbose: true,
@@ -142,6 +160,6 @@ module.exports = ((grunt) => {
         },
     });
 
-    grunt.registerTask('default', ['eslint', 'sass', 'targethtml:dev', 'concurrent', 'ava']);
-    grunt.registerTask('build', ['eslint', 'uglify', 'sass', 'cssmin', 'targethtml:dist', 'compress', 'ava']);
+    grunt.registerTask('default', ['eslint', 'sass', 'targethtml:dev', 'concurrent']);
+    grunt.registerTask('build', ['eslint', 'ava', 'uglify', 'sass', 'cssmin', 'targethtml:dist', 'compress']);
 });

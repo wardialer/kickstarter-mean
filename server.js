@@ -1,3 +1,5 @@
+// TODO aggiungere test + documentazione al giro grunt + precommit //
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
