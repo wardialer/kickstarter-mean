@@ -160,6 +160,8 @@ module.exports = ((grunt) => {
         },
     });
 
+    grunt.loadNpmTasks('grunt-githooks');
+
     grunt.registerTask('default', ['eslint', 'sass', 'targethtml:dev', 'concurrent']);
     grunt.registerTask('build', ['eslint', 'ava', 'uglify', 'sass', 'cssmin', 'targethtml:dist', 'compress']);
 });
